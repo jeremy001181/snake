@@ -10,10 +10,11 @@ namespace Snake
     {
         public Snake(int length)
         {
-            this.Length = length;
+            BodyParts = new List<BodyPart>(Enumerable.Repeat(new BodyPart(), length));
         }
 
         public int Length { get; private set; }
+        public IList<BodyPart> BodyParts { get; internal set; }
 
         public void Eat(Apple apple)
         {

@@ -19,5 +19,16 @@ namespace Snake.UnitTests
 
             Assert.AreEqual(3, snake.Length);
         }
+
+        [Test]
+        public void Should_respawn_a_new_apple_after_snake_ate_one()
+        {
+            var snake = new Snake(2);
+            var apple = new Apple();
+
+            snake.Eat(apple);
+
+            Assert.AreEqual(3, snake.Length);
+        }
     }
 }
